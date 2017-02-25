@@ -1,0 +1,8 @@
+name: ScyleHavex
+version: 1.0
+author: xTimDevx and GirlJitske
+main: me.xtimdevx.scylehavex.Main
+
+commands:
+   setrank:
+      usage: /<command>
