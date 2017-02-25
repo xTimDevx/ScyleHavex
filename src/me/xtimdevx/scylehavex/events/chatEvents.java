@@ -48,6 +48,10 @@ public class chatEvents implements Listener{
 			Bukkit.broadcastMessage("§8[§5Vip§8] §7" + p.getName() + " §8» §7" + e.getMessage());
 			return;
 		}
+		if(user.getRank() == Rank.BUILDER) {
+			Bukkit.broadcastMessage("§8[§aBuilder§8] §7" + p.getName() + " §8» §7" + e.getMessage());
+			return;
+		}
 	}
 
 }

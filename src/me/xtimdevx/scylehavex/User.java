@@ -328,7 +328,7 @@ public class User {
 	 * @author LeonTG77
 	 */
 	public enum Rank {
-		PLAYER, VIP, JRMOD, MOD, ADMIN, DEV, OWNER;
+		PLAYER, VIP, JRMOD, MOD, BUILDER, ADMIN, DEV, OWNER;
 }
 
 }

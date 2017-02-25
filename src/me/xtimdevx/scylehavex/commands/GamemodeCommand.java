@@ -1,16 +1,16 @@
 package me.xtimdevx.scylehavex.commands;
 
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
 import me.xtimdevx.scylehavex.User;
 import me.xtimdevx.scylehavex.User.Rank;
 import me.xtimdevx.scyleuhc.utils.Prefix;
 
-public class GamemodeCommand implements CommandExecutor, TabCompleter{
+public class GamemodeCommand implements CommandExecutor{
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player p = (Player) sender;
@@ -22,9 +22,28 @@ public class GamemodeCommand implements CommandExecutor, TabCompleter{
 			}
 			
 			if(args.length == 0) {
-				p.sendMessage(Prefix.PREFIX + "");
+				p.sendMessage(Prefix.PREFIX + "Usage: /gamemode <mode> <player>");
+				return true;
 			}
-		}
+			if(args.length == 1) {
+				if(args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative")) {
+					p.sendMessage(Prefix.PREFIX + "Your gamemode was set to §bCREATIVE§f.");
+					p.setGameMode(GameMode.CREATIVE);
+				}
+				if(args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival")) {
+					p.sendMessage(Prefix.PREFIX + "Your gamemode was set to §bSURVIVAL§f.");
+					p.setGameMode(GameMode.SURVIVAL);
+				}
+				if(args[0].equalsIgnoreCase("3") || args[0].equalsIgnoreCase("spectator")) {
+					p.sendMessage(Prefix.PREFIX + "Your gamemode was set to §bSPECTATOR§f.");
+					p.setGameMode(GameMode.SPECTATOR);
+				}
+				if(args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure")) {
+					p.sendMessage(Prefix.PREFIX + "Your gamemode was set to §bADVENTURE§f.");
+					p.setGameMode(GameMode.ADVENTURE);
+				}
+			}
+		} 
 		return true;
 	}
 
